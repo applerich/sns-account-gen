@@ -1,18 +1,22 @@
 # SNS Account Generator
 
 ### Description
-This script is literally pulled straight from my SNS bot. It is slightly modified to work outside of that bot but even so it is provided as is, the user is responsible for making this script suit their purpose/use.
+This script generates accounts for SNS using the gmail number trick. It was originally used by myself on a catch-all email domain but has been adapted for gmail as requested. It generates a user specified number of accounts before saving them in accounts.txt which must be present for the script to work.
 
 ### Requirements
-This script needs requests and bs4. Both of which can be installed with pip.
-This script is written in python3, so you will need python3.
-This script is configured to work with a catch-all email domain, which means anything sent to the email domain will be directed to the same inbox, it may be edited to work with other emails or to utilise gmail tricks.
+- requests `pip install requests`
+- bs4 `pip install bs4`
+- python3 (or the ability to perform small changes to make it python2 compatible)
+- a gmail email address
 
 ### Instructions
 - Download ZIP and extract all files or git clone into repo
-- Edit / change the script to suit your purpose
-*PLEASE NOTE: THE SCRIPT CONSISTS OF JUST A FUNCTION YOU WILL HAVE TO FINISH THE SCRIPT TO MAKE IT RUN, I AM NOT GOING TO DO THIS FOR YOU*
+- Check the code to make sure you are happy with the details being used in the account (name and country, address not needed to simply create an account)
+- Run accountGenerator.py
+- Fill in your gmail prefix **NOTE: THIS IS THE FIRST PART OF YOUR EMAIL ONLY, SO PREFIX OF RYAN78AG@GMAIL.COM IS RYAN78AG**
+- Input the desired password for all the accounts
+- Input the number of accounts you would like to create
 
 ### FAQ
 Will you help me?
-*No, this script is provided purely for guidance and intended to be adapted by the user to suit their own intended purpose.*
+*No, this script is super simple to use and you should work it out on your own. Use google for support if needed.*
