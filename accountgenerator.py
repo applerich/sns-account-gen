@@ -5,7 +5,7 @@ import requests
 from bs4 import BeautifulSoup as bs
 from random import randint
 
-def generate(prefix, domain, password, num):
+def generate(prefix, password, num):
 	print("")
 	accounts = []
 	for i in range(int(num)):
@@ -18,7 +18,7 @@ def generate(prefix, domain, password, num):
 		soup = bs(r.content, "html.parser")
 		csrf = soup.find('input', {'name': '_AntiCsrfToken'})['value']
 		number = randint(111,9999999)
-		email = '{}{}@{}'.format(prefix, number, domain)
+		email = '{}+{}@gmail.com'.format(prefix, number)
 		data = {
 		'firstName': 'John',
 		'lastName': 'Smith',
@@ -45,3 +45,11 @@ def generate(prefix, domain, password, num):
 		for account in accounts:
 			file.write("{}\n".format(account))
 	return
+
+	if __name__ == '__main__':
+		print("SNS Account Generator")
+		print("[@theRealChefUK]")
+		prefix = input("EMAIL PREFIX: ")
+		password = input("PASSWORD: ")
+		num = input("# OF ACCOUNTS: ")
+		generate(prefix, password, num)
