@@ -6,6 +6,9 @@ This script generates accounts for SNS using the gmail number trick. It was orig
 ### Requirements
 - requests `pip install requests`
 - bs4 `pip install bs4`
+- cfscrape `pip install cfscrape`
+- PyExecJS `pip install PyExecJS`
+- NodeJS (https://nodejs.org/en/download/)
 - python3 (or the ability to perform small changes to make it python2 compatible)
 - a gmail email address
 
