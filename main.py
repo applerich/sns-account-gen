@@ -15,7 +15,7 @@ def generate(prefix, password, num):
 		'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36',
 		'origin': 'https://www.sneakersnstuff.com'
 		}
-		r = scraper.get("https://www.sneakersnstuff.com/en/customer/register")
+		r = scraper.get("https://www.sneakersnstuff.com/en/customer/register", headers=headers)
 		soup = bs(r.content, "html.parser")
 		csrf = soup.find('input', {'name': '_AntiCsrfToken'})['value']
 		number = randint(111,9999999)
@@ -36,21 +36,22 @@ def generate(prefix, password, num):
 		'termsaccepted': 'true',
 		'_AntiCsrfToken': csrf
 		}
-		r = scraper.post("https://www.sneakersnstuff.com/en/customer/register", data=data)
+		r = scraper.post("https://www.sneakersnstuff.com/en/customer/register", data=data, headers=headers)
 		if r.status_code == 200:
 			accounts.append("{}:{}".format(email, password))
 			print("Generated account | {}".format(email))
 		else:
 			print("Failed to generate account!")
-	with open('accounts.txt') as file:
-		for account in accounts:
-			file.write("{}\n".format(account))
+	file = open("accounts.txt", "w")
+	for account in accounts:
+		file.write("{}\n".format(account))
+	file.close()
 	return
 
 if __name__ == '__main__':
 	print("SNS Account Generator")
 	print("[@theRealChefUK]")
-	prefix = input("EMAIL PREFIX: ")
+	prefix = input("\nEMAIL PREFIX: ")
 	password = input("PASSWORD: ")
 	num = input("# OF ACCOUNTS: ")
 	generate(prefix, password, num)
