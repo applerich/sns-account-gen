@@ -47,10 +47,10 @@ def generate(prefix, password, num):
 			file.write("{}\n".format(account))
 	return
 
-	if __name__ == '__main__':
-		print("SNS Account Generator")
-		print("[@theRealChefUK]")
-		prefix = input("EMAIL PREFIX: ")
-		password = input("PASSWORD: ")
-		num = input("# OF ACCOUNTS: ")
-		generate(prefix, password, num)
+if __name__ == '__main__':
+	print("SNS Account Generator")
+	print("[@theRealChefUK]")
+	prefix = input("EMAIL PREFIX: ")
+	password = input("PASSWORD: ")
+	num = input("# OF ACCOUNTS: ")
+	generate(prefix, password, num)
